@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Táctico Play - Noticias Deportivas</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="header-top">
+            <span class="live-indicator">● EN AIRE:</span> TÁCTICO PLAY — FM ALTA VOZ 98.7
+        </div>
+        <div class="header-nav-container">
+            <div class="logo">TP</div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#" class="active">INICIO</a></li>
+                    <li><a href="#">NOTICIAS</a></li>
+                    <li><a href="#">TRANSMISIONES</a></li>
+                    <li><a href="#">ENTREVISTAS</a></li>
+                </ul>
+            </nav>
+            <button class="btn-live">EN VIVO</button>
+            <button class="mobile-menu-btn">☰</button>
+        </div>
+    </header>
+
+    <div class="container main-layout">
+        
+        <main class="content-left">
+            
+            <section class="hero-section">
+                <div class="hero-image-wrapper">
+                    <img src="assets/hero-edlp.jpg" alt="Estudiantes de La Plata" class="hero-img">
+                    <div class="hero-overlay">
+                        <span class="tag red-tag">COPA LIBERTADORES</span>
+                        <h1>NOCHE DE COPA EN UNO: EL PINCHA SUEÑA</h1>
+                        <p class="hero-desc">El equipo albirrojo busca sellar su clasificación en una noche histórica en Jorge Luis Hirschi.</p>
+                        <span class="author">Por Juan Pérez</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section-block">
+                <h3 class="section-title">ÚLTIMAS TRANSMISIONES</h3>
+                <div class="video-grid">
+                    <article class="video-card">
+                        <div class="thumbnail-wrapper">
+                            <img src="assets/thumb1.jpg" alt="EDLP vs Gremio">
+                            <div class="play-icon">▶</div>
+                        </div>
+                        <h4>EDLP vs Gremio</h4>
+                    </article>
+                    <article class="video-card">
+                        <div class="thumbnail-wrapper">
+                            <img src="assets/thumb2.jpg" alt="CABJ vs RIV">
+                            <div class="play-icon">▶</div>
+                        </div>
+                        <h4>CABJ vs RIV</h4>
+                    </article>
+                    <article class="video-card">
+                        <div class="thumbnail-wrapper">
+                            <img src="assets/thumb3.jpg" alt="GELP vs Huracán">
+                            <div class="play-icon">▶</div>
+                        </div>
+                        <h4>GELP vs Huracán</h4>
+                    </article>
+                </div>
+            </section>
+
+            <section class="section-block">
+                <h3 class="section-title">NOTICIAS DESTACADAS</h3>
+                <div class="news-grid">
+                    <article class="news-card">
+                        <img src="assets/news1.jpg" alt="Noticia 1" class="news-img">
+                        <div class="news-content">
+                            <h4>Mercado de pases: Altas y bajas</h4>
+                            <a href="#" class="btn-read-more">Leer más</a>
+                        </div>
+                    </article>
+                    <article class="news-card editorial">
+                        <div class="editorial-img-wrapper">
+                            <img src="assets/microfono-editorial.png" alt="Editorial" class="news-img illustration">
+                        </div>
+                        <div class="news-content">
+                            <h4>Opinión: El rol de las SAD</h4>
+                            <a href="#" class="btn-read-more">Leer más</a>
+                        </div>
+                    </article>
+                    <article class="news-card">
+                        <img src="assets/news2.jpg" alt="Noticia 2" class="news-img">
+                        <div class="news-content">
+                            <h4>La reserva gana y gusta</h4>
+                            <a href="#" class="btn-read-more">Leer más</a>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section class="section-block">
+                <h3 class="section-title">LOS RELATOS DEL FIN DE SEMANA <span class="social-icon">Instagram</span></h3>
+                <div class="insta-grid">
+                    <div class="insta-item">
+                        <img src="assets/reel1.jpg" alt="Reel">
+                        <div class="mini-play">▶</div>
+                    </div>
+                    <div class="insta-item">
+                        <img src="assets/reel2.jpg" alt="Reel">
+                        <div class="mini-play">▶</div>
+                    </div>
+                    <div class="insta-item">
+                        <img src="assets/reel3.jpg" alt="Reel">
+                        <div class="mini-play">▶</div>
+                    </div>
+                    <div class="insta-item">
+                        <img src="assets/reel4.jpg" alt="Reel">
+                        <div class="mini-play">▶</div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <aside class="sidebar-right">
+            
+            <div class="sidebar-card">
+                <h3 class="sidebar-title">PRÓXIMOS PARTIDOS</h3>
+                <ul class="match-list">
+                    <li class="match-item">
+                        <div class="teams">EDLP vs Gremio</div>
+                        <div class="date">Mar 21:00 <span class="live-dot"></span></div>
+                    </li>
+                    <li class="match-item">
+                        <div class="teams">GELP vs Boca</div>
+                        <div class="date">Dom 17:00</div>
+                    </li>
+                    <li class="match-item">
+                        <div class="teams">Defensa vs Lanús</div>
+                        <div class="date">Lun 19:30</div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="sidebar-card">
+                <h3 class="sidebar-title">LO ÚLTIMO EN VIVO</h3>
+                <ul class="sidebar-news-list">
+                    <li class="sidebar-news-item">
+                        <img src="assets/thumb-side1.jpg" alt="Thumb">
+                        <div class="info">
+                            <h5>Post partido: Análisis táctico</h5>
+                            <span>Hace 2 horas</span>
+                        </div>
+                    </li>
+                    <li class="sidebar-news-item">
+                        <img src="assets/thumb-side2.jpg" alt="Thumb">
+                        <div class="info">
+                            <h5>Conferencia de prensa Domínguez</h5>
+                            <span>Ayer</span>
+                        </div>
+                    </li>
+                    <li class="sidebar-news-item">
+                        <img src="assets/thumb-side3.jpg" alt="Thumb">
+                        <div class="info">
+                            <h5>La previa desde el estadio</h5>
+                            <span>Ayer</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="ad-space">
+                <p>ESPACIO PUBLICITARIO</p>
+            </div>
+
+        </aside>
+
+    </div>
+
+    <footer class="main-footer">
+        <p>&copy; 2025 Táctico Play. Medio periodístico aliado a FM Alta Voz 98.7 – La Plata, Argentina.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
