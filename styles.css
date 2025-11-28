@@ -1,17 +1,19 @@
 /* VARIABLES & RESET */
 :root {
-    html {
-    scroll-behavior: smooth;
-}
-    --bg-dark: #0D1A12;       /* Fondo principal verde muy oscuro */
-    --bg-card: #14261b;       /* Fondo de tarjetas ligeramente más claro */
+    --bg-dark: #0D1A12;       
+    --bg-card: #14261b;       
     --text-main: #ffffff;
     --text-muted: #b0c4b1;
-    --accent-green: #2ecc71;  /* Verde vibrante para acciones */
-    --accent-red: #e74c3c;    /* Rojo para vivo/youtube */
+    --accent-green: #2ecc71;  
+    --accent-red: #e74c3c;    
     --font-main: 'Inter', sans-serif;
     --border-radius: 8px;
     --transition: all 0.3s ease;
+}
+
+/* SCROLL SUAVE ACTIVADO AQUÍ */
+html {
+    scroll-behavior: smooth;
 }
 
 * {
@@ -97,7 +99,7 @@ img { width: 100%; display: block; object-fit: cover; }
     margin: 30px auto;
     padding: 0 20px;
     display: grid;
-    grid-template-columns: 2.5fr 1fr; /* 70% izq - 30% der aprox */
+    grid-template-columns: 2.5fr 1fr; 
     gap: 30px;
 }
 
@@ -111,6 +113,7 @@ img { width: 100%; display: block; object-fit: cover; }
     border-left: 4px solid var(--accent-green);
     padding-left: 10px;
     color: var(--text-main);
+    scroll-margin-top: 100px; /* Para que el header no tape el título al bajar */
 }
 
 /* HERO SECTION */
@@ -122,7 +125,7 @@ img { width: 100%; display: block; object-fit: cover; }
     height: 400px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
-.hero-img { height: 100%; width: 100%; background: #333; /* Fallback color */ }
+.hero-img { height: 100%; width: 100%; background: #333; }
 
 .hero-overlay {
     position: absolute;
@@ -149,7 +152,7 @@ img { width: 100%; display: block; object-fit: cover; }
 .hero-desc { color: var(--text-muted); margin-bottom: 15px; max-width: 80%; }
 .author { font-size: 0.8rem; color: var(--accent-green); font-style: italic; }
 
-/* VIDEO GRID (Últimas Transmisiones) */
+/* VIDEO GRID */
 .video-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -234,7 +237,6 @@ img { width: 100%; display: block; object-fit: cover; }
 }
 .sidebar-title { font-size: 0.9rem; text-transform: uppercase; border-bottom: 1px solid #1f3a2b; padding-bottom: 10px; margin-bottom: 15px; }
 
-/* Match List */
 .match-item {
     display: flex;
     justify-content: space-between;
@@ -251,7 +253,6 @@ img { width: 100%; display: block; object-fit: cover; }
     margin-left: 5px;
 }
 
-/* Sidebar News */
 .sidebar-news-item {
     display: flex;
     gap: 10px;
@@ -292,11 +293,10 @@ img { width: 100%; display: block; object-fit: cover; }
 /* RESPONSIVE */
 @media (max-width: 768px) {
     .container { grid-template-columns: 1fr; }
-    .main-nav { display: none; } /* Ocultar menú en móvil para simplificar demo */
+    .main-nav { display: none; }
     .mobile-menu-btn { display: block; }
     .hero-overlay h1 { font-size: 1.8rem; }
     .video-grid, .news-grid { grid-template-columns: 1fr; }
     .insta-grid { grid-template-columns: repeat(2, 1fr); }
     .header-nav-container { padding: 10px 15px; }
-
 }
