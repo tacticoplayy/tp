@@ -1,5 +1,8 @@
 /* VARIABLES & RESET */
 :root {
+    html {
+    scroll-behavior: smooth;
+}
     --bg-dark: #0D1A12;       /* Fondo principal verde muy oscuro */
     --bg-card: #14261b;       /* Fondo de tarjetas ligeramente más claro */
     --text-main: #ffffff;
@@ -295,4 +298,5 @@ img { width: 100%; display: block; object-fit: cover; }
     .video-grid, .news-grid { grid-template-columns: 1fr; }
     .insta-grid { grid-template-columns: repeat(2, 1fr); }
     .header-nav-container { padding: 10px 15px; }
+
 }
