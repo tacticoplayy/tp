@@ -143,6 +143,52 @@
 
 </body>
 </html>
+document.addEventListener('DOMContentLoaded', () => {
+    
+    // TU EXCEL CONECTADO
+    const SHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQgImg92liKoPf_-2pBy02CdWMFnZMbh0pYXlrgPJYJUAljI5A8ANnvSJd5SzV2mmm8eegOorZuKwJV/pub?output=csv";
+
+    const container = document.getElementById('contenedor-noticias');
+    if (!container) return;
+
+    fetch(SHEET_URL)
+        .then(response => response.text())
+        .then(csvText => {
+            const rows = csvText.split('\n').slice(1); // Borrar encabezado
+            
+            // Limpiamos el contenedor para empezar de cero
+            container.innerHTML = '';
+
+            rows.forEach(row => {
+                const columns = row.split(',');
+                
+                // Verificamos que la fila no esté vacía
+                if (columns.length > 1 && columns[0].trim() !== '') {
+                    
+                    // Limpieza de datos (sacar comillas extrañas del CSV)
+                    const titulo = columns[0].replace(/"/g, '');
+                    const imagen = columns[1].replace(/"/g, '');
+                    // Si la columna C está vacía, pone "TP" por defecto
+                    const categoria = columns[2] && columns[2].length > 1 ? columns[2].replace(/"/g, '') : 'TP';
+                    const link = columns[3] ? columns[3].replace(/"/g, '') : '#';
+
+                    const card = document.createElement('article');
+                    card.className = 'news-card';
+                    card.innerHTML = `
+                        <img src="${imagen}" alt="${titulo}" class="news-img" onerror="this.src='https://via.placeholder.com/400x300?text=Sin+Imagen'">
+                        <div class="news-content">
+                            <span style="color:#2ecc71; font-size:0.7rem; font-weight:800; letter-spacing:1px; text-transform:uppercase;">${categoria}</span>
+                            <h4 style="margin-top:5px; margin-bottom:10px;">${titulo}</h4>
+                            <a href="${link}" target="_blank" class="btn-read-more">Leer más</a>
+                        </div>
+                    `;
+                    // Usamos prepend para que lo último que escribas en Excel salga PRIMERO
+                    container.prepend(card); 
+                }
+            });
+        })
+        .catch(error => console.error('Error:', error));
+});
 
 
 
