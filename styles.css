@@ -300,3 +300,83 @@ img { width: 100%; display: block; object-fit: cover; }
     .insta-grid { grid-template-columns: repeat(2, 1fr); }
     .header-nav-container { padding: 10px 15px; }
 }
+/* ESTILOS DEL POP-UP (MODAL) */
+.modal-overlay {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.85); /* Fondo negro transparente */
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background-color: #14261b; /* Verde muy oscuro */
+    width: 100%;
+    max-width: 800px;
+    max-height: 90vh; /* Que no sea más alto que la pantalla */
+    overflow-y: auto; /* Scroll si el texto es largo */
+    border-radius: 12px;
+    padding: 30px;
+    position: relative;
+    border: 1px solid #2ecc71;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px; right: 20px;
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+}
+.close-btn:hover { color: #e74c3c; }
+
+#modal-img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.modal-tag {
+    color: #2ecc71;
+    font-weight: 800;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 5px;
+}
+
+#modal-titulo {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.modal-author {
+    font-style: italic;
+    color: #b0c4b1;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #2e4a3d;
+    padding-bottom: 15px;
+}
+
+.modal-text-body {
+    color: #e0e0e0;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    white-space: pre-wrap; /* Respeta los espacios del Excel */
+}
+
+/* Scrollbar personalizado para el modal */
+.modal-content::-webkit-scrollbar { width: 8px; }
+.modal-content::-webkit-scrollbar-thumb { background: #2ecc71; border-radius: 4px; }
+.modal-content::-webkit-scrollbar-track { background: #0D1A12; }
