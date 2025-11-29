@@ -3,7 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Táctico Play - Noticias Deportivas</title>
+    
+    <title>Táctico Play - Noticias de Estudiantes y Gimnasia</title>
+    <meta name="description" content="Portal de noticias deportivas de La Plata. Cobertura exclusiva de Estudiantes (EDLP) y Gimnasia (GELP). Transmisiones en vivo y entrevistas.">
+    <meta name="keywords" content="Estudiantes, Gimnasia, La Plata, Futbol, EDLP, GELP, Noticias, Táctico Play">
+    <meta name="author" content="Táctico Play">
+    <meta name="theme-color" content="#0D1A12">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Táctico Play - El pulso del fútbol platense">
+    <meta property="og:description" content="Todas las noticias de Estudiantes y Gimnasia en un solo lugar.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1516731938550-98d0034a7428?q=80&w=1200"> <meta property="og:url" content="https://tacticoplayy.github.io/tp/">
+
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
@@ -23,8 +34,8 @@
                     <li><a href="#entrevistas">ENTREVISTAS</a></li>
                 </ul>
             </nav>
-            <button class="btn-live">EN VIVO</button>
-            <button class="mobile-menu-btn">☰</button>
+            <a href="https://radios.com.ar/alta-voz-la-plata/" target="_blank" rel="noopener noreferrer" class="btn-live">EN VIVO</a>
+            <button class="mobile-menu-btn" aria-label="Abrir menú">☰</button>
         </div>
     </header>
 
@@ -34,7 +45,7 @@
             
             <section class="hero-section">
                 <div class="hero-image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1516731938550-98d0034a7428?q=80&w=1200" alt="Estadio" class="hero-img">
+                    <img src="https://images.unsplash.com/photo-1516731938550-98d0034a7428?q=80&w=1200" alt="Estadio UNO de noche" class="hero-img" fetchpriority="high">
                     <div class="hero-overlay">
                         <span class="tag red-tag">COPA LIBERTADORES</span>
                         <h1>NOCHE DE COPA EN UNO: EL PINCHA SUEÑA</h1>
@@ -48,27 +59,27 @@
                 <h3 class="section-title">ÚLTIMAS TRANSMISIONES</h3>
                 <div class="video-grid">
                     <article class="video-card">
-                        <a href="https://youtube.com" target="_blank">
+                        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
                             <div class="thumbnail-wrapper">
-                                <img src="https://images.unsplash.com/photo-1522778119026-d647f0565c6a?q=80&w=600" alt="Partido">
+                                <img src="https://images.unsplash.com/photo-1522778119026-d647f0565c6a?q=80&w=600" alt="Partido" loading="lazy">
                                 <div class="play-icon">▶</div>
                             </div>
                             <h4>EDLP vs Gremio</h4>
                         </a>
                     </article>
                     <article class="video-card">
-                        <a href="https://youtube.com" target="_blank">
+                        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
                             <div class="thumbnail-wrapper">
-                                <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=600" alt="Fútbol">
+                                <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=600" alt="Fútbol" loading="lazy">
                                 <div class="play-icon">▶</div>
                             </div>
                             <h4>CABJ vs RIV</h4>
                         </a>
                     </article>
                     <article class="video-card">
-                        <a href="https://youtube.com" target="_blank">
+                        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
                             <div class="thumbnail-wrapper">
-                                <img src="https://images.unsplash.com/photo-1518605348400-43ded6000c3c?q=80&w=600" alt="Cancha">
+                                <img src="https://images.unsplash.com/photo-1518605348400-43ded6000c3c?q=80&w=600" alt="Cancha" loading="lazy">
                                 <div class="play-icon">▶</div>
                             </div>
                             <h4>GELP vs Huracán</h4>
@@ -79,27 +90,63 @@
 
             <section id="noticias" class="section-block">
                 <h3 class="section-title">NOTICIAS DESTACADAS</h3>
+                
                 <div class="news-grid" id="contenedor-noticias">
+                    <div class="loader-container">
+                        <div class="spinner"></div>
+                        <p>Cargando últimas noticias...</p>
                     </div>
+                </div>
             </section>
 
             <section id="entrevistas" class="section-block">
                 <h3 class="section-title">LOS RELATOS DEL FIN DE SEMANA <span class="social-icon">Instagram</span></h3>
                 <div class="insta-grid">
-                    <div class="insta-item">
-                        <img src="https://picsum.photos/id/117/300/500" alt="Reel">
-                        <div class="mini-play">▶</div>
-                    </div>
-                    <div class="insta-item">
-                        <img src="https://picsum.photos/id/152/300/500" alt="Reel">
-                        <div class="mini-play">▶</div>
-                    </div>
-                    <div class="insta-item">
-                        <img src="https://picsum.photos/id/160/300/500" alt="Reel">
-                        <div class="mini-play">▶</div>
-                    </div>
-                    <div class="insta-item">
-                        <img src="https://picsum.photos/id/177/300/500" alt="Reel">
-                        <div class="mini-play">▶</div>
-                    </div>
+                    <div class="insta-item"><img src="https://picsum.photos/id/117/300/500" alt="Reel" loading="lazy"><div class="mini-play">▶</div></div>
+                    <div class="insta-item"><img src="https://picsum.photos/id/152/300/500" alt="Reel" loading="lazy"><div class="mini-play">▶</div></div>
+                    <div class="insta-item"><img src="https://picsum.photos/id/160/300/500" alt="Reel" loading="lazy"><div class="mini-play">▶</div></div>
+                    <div class="insta-item"><img src="https://picsum.photos/id/177/300/500" alt="Reel" loading="lazy"><div class="mini-play">▶</div></div>
+                </div>
+            </section>
 
+        </main>
+
+        <aside class="sidebar-right">
+            <div class="sidebar-card">
+                <h3 class="sidebar-title">PRÓXIMOS PARTIDOS</h3>
+                <ul class="match-list">
+                    <li class="match-item">
+                        <div class="teams">EDLP vs Gremio</div>
+                        <div class="date">Mar 21:00 <span class="live-dot"></span></div>
+                    </li>
+                    <li class="match-item">
+                        <div class="teams">GELP vs Boca</div>
+                        <div class="date">Dom 17:00</div>
+                    </li>
+                </ul>
+            </div>
+            <div class="ad-space"><p>ESPACIO PUBLICITARIO</p></div>
+        </aside>
+
+    </div>
+
+    <footer class="main-footer">
+        <p>&copy; 2025 Táctico Play. Medio periodístico aliado a FM Alta Voz 98.7</p>
+    </footer>
+
+    <div id="modal-noticia" class="modal-overlay" role="dialog" aria-modal="true">
+        <div class="modal-content">
+            <button class="close-btn" onclick="cerrarNoticia()" aria-label="Cerrar">&times;</button>
+            <div class="modal-body">
+                <img id="modal-img" src="" alt="">
+                <span id="modal-tag" class="modal-tag"></span>
+                <h2 id="modal-titulo"></h2>
+                <p id="modal-autor" class="modal-author"></p>
+                <div id="modal-texto" class="modal-text-body"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
