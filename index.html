@@ -138,7 +138,17 @@
 <footer class="main-footer">
     <p>&copy; 2025 Táctico Play. Medio periodístico aliado a FM Alta Voz 98.7</p>
 </footer>
-
+<div id="modal-noticia" class="modal-overlay">
+    <div class="modal-content">
+        <span class="close-btn" onclick="cerrarNoticia()">&times;</span>
+        <img id="modal-img" src="" alt="">
+        <span id="modal-cat" class="modal-tag">CATEGORIA</span>
+        <h2 id="modal-titulo">Título de la noticia</h2>
+        <p id="modal-autor" class="modal-author">Por Autor</p>
+        <div id="modal-texto" class="modal-text-body">
+            </div>
+    </div>
+</div>
 <script src="script.js"></script>
 
 </body>
@@ -189,6 +199,7 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         .catch(error => console.error('Error:', error));
 });
+
 
 
 
