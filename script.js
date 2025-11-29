@@ -1,48 +1,58 @@
 document.addEventListener('DOMContentLoaded', () => {
     
-    // Referencias
-    const btnLive = document.querySelector('.btn-live');
-    const menuBtn = document.querySelector('.mobile-menu-btn');
-    const nav = document.querySelector('.main-nav');
+    // TU LINK DE GOOGLE SHEETS (Ya configurado)
+    const SHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQgImg92liKoPf_-2pBy02CdWMFnZMbh0pYXlrgPJYJUAljI5A8ANnvSJd5SzV2mmm8eegOorZuKwJV/pub?output=csv";
 
-    // 1. Simulación de Botón "En Vivo"
-    btnLive.addEventListener('click', () => {
-        alert('Abriendo reproductor de streaming FM Alta Voz 98.7...');
-        // Aquí iría la lógica real para abrir un popup o reproductor
-    });
+    const container = document.getElementById('contenedor-noticias');
 
-    // 2. Menú Responsive (Toggle básico)
-    menuBtn.addEventListener('click', () => {
-        const isHidden = window.getComputedStyle(nav).display === 'none';
-        
-        if (isHidden) {
-            nav.style.display = 'block';
-            nav.style.position = 'absolute';
-            nav.style.top = '60px';
-            nav.style.left = '0';
-            nav.style.width = '100%';
-            nav.style.background = '#0D1A12';
-            nav.style.padding = '20px';
-            nav.style.borderBottom = '1px solid #2ecc71';
+    // Si no encuentra el contenedor (por si acaso), paramos.
+    if (!container) return;
+
+    fetch(SHEET_URL)
+        .then(response => response.text())
+        .then(csvText => {
+            // Convertimos el texto del CSV a filas
+            const rows = csvText.split('\n').slice(1); // Borramos la fila 1 (títulos)
             
-            // Re-estilar lista para vertical
-            const ul = nav.querySelector('ul');
-            ul.style.flexDirection = 'column';
-            ul.style.gap = '15px';
-            ul.style.textAlign = 'center';
-        } else {
-            nav.style.display = ''; // Reset al CSS original
-            nav.removeAttribute('style'); // Limpiar estilos inline
-        }
-    });
+            // Limpiamos el contenedor por si había algo viejo
+            container.innerHTML = '';
 
-    // 3. Efecto simple en tarjetas de noticias (Log en consola)
-    const cards = document.querySelectorAll('.news-card');
-    cards.forEach(card => {
-        card.addEventListener('click', () => {
-            console.log('Navegando al artículo...');
-        });
-    });
+            rows.forEach(row => {
+                // Separamos las columnas (Titulo, Imagen, Categoria, Link)
+                const columns = row.split(','); 
 
-    console.log('Táctico Play - Sistema cargado correctamente');
+                // A veces el CSV deja comillas o espacios, limpiamos un poco:
+                // Columna A (0): Titulo
+                // Columna B (1): Imagen
+                // Columna C (2): Categoria (Opcional)
+                // Columna D (3): Link
+                
+                if (columns.length >= 2) { // Verificamos que tenga al menos titulo e imagen
+                    const titulo = columns[0].replace(/"/g, ''); // Sacar comillas extra
+                    const imagen = columns[1].replace(/"/g, '');
+                    const categoria = columns[2] ? columns[2].replace(/"/g, '') : 'TP';
+                    const link = columns[3] ? columns[3].replace(/"/g, '') : '#';
+
+                    // Solo creamos la tarjeta si hay datos reales
+                    if (titulo.length > 2) {
+                        const card = document.createElement('article');
+                        card.className = 'news-card';
+                        
+                        // HTML de la tarjeta
+                        card.innerHTML = `
+                            <img src="${imagen}" alt="${titulo}" class="news-img">
+                            <div class="news-content">
+                                <span style="color:#2ecc71; font-size:0.7rem; font-weight:800; letter-spacing:1px; text-transform:uppercase;">${categoria}</span>
+                                <h4 style="margin-top:5px; margin-bottom:10px;">${titulo}</h4>
+                                <a href="${link}" target="_blank" class="btn-read-more">Leer más</a>
+                            </div>
+                        `;
+                        
+                        // Agregamos la tarjeta al principio (para que la más nueva quede arriba)
+                        container.prepend(card);
+                    }
+                }
+            });
+        })
+        .catch(error => console.error('Error cargando noticias:', error));
 });
